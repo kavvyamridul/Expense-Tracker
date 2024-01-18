@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".addtransaction">
+
+    <RelativeLayout
+        android:id="@+id/customdashboard"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="#BA6CC6">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- "ADD TRANSACTION" TextView in the center -->
+                <TextView
+                    android:id="@+id/dashboardText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="ADD TRANSACTION"
+                    android:textColor="@android:color/white"
+                    android:textSize="34sp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- EditText for adding the amount of the transaction -->
+
+    <!-- EditText for adding additional details of the transaction -->
+
+
+    <!-- Button for your action -->
+    <EditText
+        android:id="@+id/amountEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/customdashboard"
+        android:layout_marginTop="51dp"
+        android:gravity="start"
+        android:hint="Amount"
+        android:inputType="numberDecimal"
+        android:padding="16dp"
+        android:textAlignment="textStart"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/detailsEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/amountEditText"
+        android:layout_marginTop="70dp"
+        android:gravity="start"
+        android:hint="Details"
+        android:padding="16dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/addbutton"
+        android:layout_below="@+id/detailsEditText"
+        android:layout_marginTop="92dp"
+        android:text="Add" />
+
+    <ListView
+        android:id="@+id/transactionListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp"
+        android:padding="16dp" />
+
+</RelativeLayout>

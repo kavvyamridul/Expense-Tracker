@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E7C4ED"
+    tools:context=".DashboardActivity">
+
+    <RelativeLayout
+        android:id="@+id/customdashboard"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="#BA6CC6">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- "DASHBOARD" TextView in the center -->
+                <TextView
+                    android:id="@+id/dashboardText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="DASHBOARD"
+                    android:textColor="@android:color/white"
+                    android:textSize="34sp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/add_floating"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@+id/customdashboard"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="76dp">
+
+            <!-- "Expense" TextView in the middle left of CardView -->
+            <TextView
+                android:id="@+id/expenseText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:text="Expense"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <!-- "000" TextView in the middle right of CardView -->
+            <TextView
+                android:id="@+id/money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="26dp"
+                android:layout_marginRight="26dp"
+                android:text="000"
+                android:textColor="#FB0303"
+                android:textSize="24sp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- NestedScrollView below the CardView -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/add_floating"
+        android:layout_marginTop="40dp">
+
+        <!-- RecyclerView inside the NestedScrollView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/history_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Rounded CardView at the bottom right of the screen for "Add Transaction" -->
+    <Button
+        android:id="@+id/addTransactionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="#BA6CC6"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:text="Add Transaction"
+        android:textColor="@android:color/white" />
+
+
+    <!-- Logout Button in the left bottom corner -->
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="104dp"
+        android:layout_height="61dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="#6F419B"
+        android:text="Logout"
+        android:textColor="#FFFFFF" />
+
+
+
+</RelativeLayout>
